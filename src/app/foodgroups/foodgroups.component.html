@@ -1,8 +1,14 @@
 <h2>Food Groups</h2>
 <div>
-    <ul class="foodgroups">
-        <li *ngFor="let foodgroup of foodgroups">
+    <mat-grid-list cols="3" rowHeight="1:1">
+<!--         <mat-grid-tile *ngFor="let foodgroup of foodgroups">
             <button mat-raised-button>{{foodgroup.name}}</button>
-        </li>
-    </ul>
+        </mat-grid-tile> -->
+        <mat-grid-tile><button class="group" mat-raised-button>Fruits</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button>Grains</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button>Dairy</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button>Vegetables</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button>Proteins</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button>Other</button></mat-grid-tile>
+    </mat-grid-list>
 </div>

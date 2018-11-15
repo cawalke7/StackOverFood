@@ -1,0 +1,7 @@
+<mat-toolbar>
+  <span>{{ title }}</span>
+  <span id="menu">
+    <!-- TODO add if statement  -->
+    <button mat-button *ngFor="let item of loginMenu">{{ item }}</button>
+  </span>
+</mat-toolbar>
