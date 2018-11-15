@@ -5,7 +5,9 @@ import { Food } from '../model/food';
 import { FOOD_GROUP } from './const-foodgroups';
 
 const TEMP_FOOD: Ingredient[] = [
-  {id: 1, limit: 1, food: {id: 1, name: 'apple', group: {name: 'Fruit'}}}
+  {id: 1, limit: 1, food: {id: 1, name: 'apple', group: {name: 'Fruits'}}},
+  {id: 2, limit: 1, food: {id: 2, name: 'bread', group: {name: 'Grains'}}},
+  {id: 3, limit: 1, food: {id: 3, name: 'carrot', group: {name: 'Vegetables'}}}
 ];
 
 @Component({

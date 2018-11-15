@@ -3,6 +3,14 @@ div {
     display: inline-block;
 }
 
+table {
+    width: 100%
+}
+
+td {
+    text-align: left;
+}
+
 .group {
     width: 75%;
     height: 75%;
