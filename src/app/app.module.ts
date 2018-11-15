@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FoodgroupsComponent } from './foodgroups/foodgroups.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { KitchentoolsComponent } from './kitchentools/kitchentools.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodgroupsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    KitchentoolsComponent
   ],
   imports: [
     BrowserAnimationsModule,

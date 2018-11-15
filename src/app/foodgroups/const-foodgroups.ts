@@ -1,4 +1,4 @@
-import { FoodGroup } from './model/foodgroup';
+import { FoodGroup } from '../model/foodgroup';
 
 export const FOOD_GROUP: FoodGroup[] = [
     { name: 'Fruits' },
