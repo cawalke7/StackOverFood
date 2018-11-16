@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FoodgroupsComponent } from './foodgroups/foodgroups.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { KitchentoolsComponent } from './kitchentools/kitchentools.component';
+import { GeneratorComponent } from './generator/generator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodgroupsComponent,
     ToolbarComponent,
-    KitchentoolsComponent
+    KitchentoolsComponent,
+    GeneratorComponent
   ],
   imports: [
     BrowserAnimationsModule,
