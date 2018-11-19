@@ -47,6 +47,7 @@ export class KitchentoolsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.newtool = result;
+      this.add(this.newtool);
     });
   }
 
