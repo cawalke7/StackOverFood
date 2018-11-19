@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTableModule, MatGridListModule, MatToolbarModule,
   MatSelectModule } from '@angular/material';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +33,12 @@ import { KitchentoolsDialogComponent } from './kitchentools-dialog/kitchentools-
     MatDialogModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  entryComponents: [
+    KitchentoolsDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
