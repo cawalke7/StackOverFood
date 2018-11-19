@@ -24,10 +24,12 @@ export class KitchentoolsComponent implements OnInit {
   tool: Tool = TEMP_TOOLS[0];
   allTools = TEMP_TOOLS;
 
-  // tool: String;
+  newtool: Tool = {name: '', replacements: [], cookingMethods: []};
 
-  add(newTool) {
-    this.dataSource.push(newTool);
+  add(name) {
+    this.newtool.name = name;
+    this.dataSource.push(this.newtool);
+    this.newtool = {name: '', replacements: [], cookingMethods: []};
   }
 
   remove(index) {
