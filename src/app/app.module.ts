@@ -1,5 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatTableModule, MatGridListModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatTableModule, MatGridListModule, MatToolbarModule,
+  MatSelectModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +11,7 @@ import { FoodgroupsComponent } from './foodgroups/foodgroups.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { KitchentoolsComponent } from './kitchentools/kitchentools.component';
 import { GeneratorComponent } from './generator/generator.component';
+import { KitchentoolsDialogComponent } from './kitchentools-dialog/kitchentools-dialog.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { GeneratorComponent } from './generator/generator.component';
     FoodgroupsComponent,
     ToolbarComponent,
     KitchentoolsComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    KitchentoolsDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -25,7 +29,9 @@ import { GeneratorComponent } from './generator/generator.component';
     MatButtonModule,
     MatTableModule,
     MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
