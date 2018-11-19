@@ -1,17 +1,33 @@
 <h2>Add Tools</h2>
 <div>
-  <button mat-stroked-button>Browse</button>
+  <!-- <button mat-stroked-button (click)="openDialog()">Browse</button> -->
+    <mat-form-field>
+        <mat-select placeholder="Browse" [(ngModel)]="selectedValue" name="tool">
+            <mat-option *ngFor="let toolio of allTools" [value]="toolio.name">
+                {{toolio.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button (click)="add(selectedValue)">Add</button>
 </div>
 <br>
 <br>
 <div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="Kitchen Tools">
-            <th mat-header-cell *matHeaderCellDef> Kitchen Tools </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <table>
+        <!-- TODO Add table using JavaScript and ng-for -->
+        <thead>
+            <tr>
+                <th>Tool</th>
+                <th></th> <!-- Nothing for delete button -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tool of dataSource; let i = index">
+                <td>{{ tool.name }}</td>
+                <td class="remove">
+                    <button class="btn btn-default" type="button" (click)="remove(i)">X</button>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>
