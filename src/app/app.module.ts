@@ -12,6 +12,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { KitchentoolsComponent } from './kitchentools/kitchentools.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { KitchentoolsDialogComponent } from './kitchentools-dialog/kitchentools-dialog.component';
+import { FoodDialogComponent } from './food-dialog/food-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { KitchentoolsDialogComponent } from './kitchentools-dialog/kitchentools-
     ToolbarComponent,
     KitchentoolsComponent,
     GeneratorComponent,
-    KitchentoolsDialogComponent
+    KitchentoolsDialogComponent,
+    FoodDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +39,8 @@ import { KitchentoolsDialogComponent } from './kitchentools-dialog/kitchentools-
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   entryComponents: [
-    KitchentoolsDialogComponent
+    KitchentoolsDialogComponent,
+    FoodDialogComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -5,8 +5,8 @@
 <br>
 <br>
 <div>
-    <table>
-        <thead>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark">
             <tr>
                 <th style="text-align: left">Tool</th>
                 <th></th> <!-- Nothing for delete button -->
@@ -16,7 +16,7 @@
             <tr *ngFor="let tool of dataSource; let i = index">
                 <td>{{ tool.name }}</td>
                 <td class="remove" style="text-align: right">
-                    <button class="btn btn-default" type="button" (click)="remove(i)">X</button>
+                    <button mat-button type="button" (click)="remove(i)">X</button>
                 </td>
             </tr>
         </tbody>
