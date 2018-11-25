@@ -27,6 +27,7 @@ export class KitchentoolsComponent implements OnInit {
   newtool: Tool = {name: '', replacements: [], cookingMethods: []};
 
   add(name) {
+    // TODO search for tool properly (by name)
     this.newtool.name = name;
     this.dataSource.push(this.newtool);
     this.newtool = {name: '', replacements: [], cookingMethods: []};
@@ -45,9 +46,10 @@ export class KitchentoolsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.newtool = result;
-      this.add(this.newtool);
+      console.log('The dialog was closed -- ' + result);
+      if (result) {
+        this.add(result);
+      }
     });
   }
 

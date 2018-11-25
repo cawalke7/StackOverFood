@@ -1,31 +1,21 @@
 <h2>Add Tools</h2>
 <div>
-    <button mat-stroked-button (click)="openDialog()">Test Dialog</button>
-    <mat-form-field>
-        <mat-select placeholder="Browse" [(ngModel)]="selectedValue" name="tool">
-            <mat-option *ngFor="let tool of allTools" [value]="tool.name">
-                {{tool.name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <p> Selected food: {{selectedValue}} </p>
-    <button mat-stroked-button (click)="add(selectedValue)">Add</button>
+    <button mat-stroked-button (click)="openDialog()">Browse</button>
 </div>
 <br>
 <br>
 <div>
     <table>
-        <!-- TODO Add table using JavaScript and ng-for -->
         <thead>
             <tr>
-                <th>Tool</th>
+                <th style="text-align: left">Tool</th>
                 <th></th> <!-- Nothing for delete button -->
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let tool of dataSource; let i = index">
                 <td>{{ tool.name }}</td>
-                <td class="remove">
+                <td class="remove" style="text-align: right">
                     <button class="btn btn-default" type="button" (click)="remove(i)">X</button>
                 </td>
             </tr>
