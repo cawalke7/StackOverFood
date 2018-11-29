@@ -1,0 +1,26 @@
+<h2>Add Food</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+      <mat-select placeholder="Search" [(ngModel)]="chosenID" name="food">
+          <mat-option *ngFor="let food of allFood" [value]="food.id">
+              {{food.name}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+  <h3>Amount</h3>
+  <mat-form-field class="small">
+      <input matInput type="number" min="0" >
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Units" [(ngModel)]="chosenUnit" name="unit">
+          <mat-option *ngFor="let unit of units" [value]="unit">
+              {{unit}}
+          </mat-option>
+      </mat-select>
+  </mat-form-field>
+</div>
+<!-- <p> Selected food: {{selectedValue}} </p> -->
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="chosenID" cdkFocusInitial>Add</button>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

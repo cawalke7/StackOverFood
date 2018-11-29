@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatTableModule, MatGridListModule, MatToolbarModule,
-  MatSelectModule } from '@angular/material';
+  MatSelectModule, MatInputModule } from '@angular/material';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,7 +33,8 @@ import { FoodDialogComponent } from './food-dialog/food-dialog.component';
     MatGridListModule,
     MatToolbarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
