@@ -10,7 +10,7 @@ export const ALLOWED_UNITS: String[] = [
 ];
 
 export interface FoodData {
-  food: Food;
+  id: number;
   amount: number;
   units: String;
 }

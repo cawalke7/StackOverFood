@@ -9,7 +9,7 @@
   </mat-form-field>
   <h3>Amount</h3>
   <mat-form-field class="small">
-      <input matInput type="number" min="0" >
+      <input matInput type="number" min="0" [(ngModel)]="amount">
   </mat-form-field>
   <mat-form-field>
       <mat-select placeholder="Units" [(ngModel)]="chosenUnit" name="unit">
@@ -20,7 +20,8 @@
   </mat-form-field>
 </div>
 <!-- <p> Selected food: {{selectedValue}} </p> -->
+<!-- <p> Selected units: {{chosenUnit}} </p> -->
 <div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="chosenID" cdkFocusInitial>Add</button>
+  <button mat-button [mat-dialog-close]="[chosenID,amount,chosenUnit]" cdkFocusInitial>Add</button>
   <button mat-button (click)="onNoClick()">Close</button>
 </div>

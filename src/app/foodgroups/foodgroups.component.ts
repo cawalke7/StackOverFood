@@ -39,10 +39,11 @@ export class FoodgroupsComponent implements OnInit {
   addAll(id, amount, units) {
     // TODO search for tool properly (by name)
     this.newfood.id = id;
-    this.newfood.limit = 0;
-    this.newfood.units = '';
+    this.newfood.limit = amount;
+    this.newfood.units = units;
     this.newfood.food = new Food(id);
     this.dataSource.push(this.newfood);
+    console.log(this.newfood.food.cookingMethods[0]); // Prepare for recipe generating
     this.newfood = {id: 0, limit: 0, units: '', food: new Food(0)};
   }
 
@@ -59,9 +60,8 @@ export class FoodgroupsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed -- ' + result);
       if (result) {
-        this.addAll(result, 0, '');
+        this.addAll(result[0], result[1], result[2]);
       }
     });
   }
