@@ -2,7 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 // import { FoodGroup } from '../model/foodgroup';
 import { Ingredient } from '../model/ingredient';
 import { Food } from '../model/food';
-import { FOOD_GROUP } from './const-foodgroups';
+import { FOOD_GROUP } from '../testdata/const-foodgroups';
+import { TEMP_FOOD } from '../testdata/const-food';
 import { MatDialog } from '@angular/material';
 import { FoodDialogComponent } from '../food-dialog/food-dialog.component';
 
@@ -10,10 +11,10 @@ export interface FoodData {
   ingredient: Food;
 }
 
-const TEMP_FOOD: Ingredient[] = [
-  {id: 1, limit: 1, food: {id: 1, name: 'apple', group: {name: 'Fruits'}}},
-  {id: 2, limit: 1, food: {id: 2, name: 'bread', group: {name: 'Grains'}}},
-  {id: 3, limit: 1, food: {id: 3, name: 'carrot', group: {name: 'Vegetables'}}}
+const TEMP_INGREDIENT: Ingredient[] = [
+  {id: 0, limit: 1, units: '', food: new Food(0)},
+  {id: 1, limit: 1, units: '', food: new Food(1)},
+  {id: 2, limit: 1, units: '', food: new Food(2)}
 ];
 
 @Component({
@@ -23,16 +24,26 @@ const TEMP_FOOD: Ingredient[] = [
 })
 export class FoodgroupsComponent implements OnInit {
   foodgroups = FOOD_GROUP;
-  otherFood = Object.assign([], TEMP_FOOD);
+  // otherFood = Object.assign([], TEMP_INGREDIENT);
 
-  dataSource = Object.assign([], TEMP_FOOD);
-  newfood: Ingredient = {id: 0, limit: 0, food: {id: 0, name: '', group: {name: ''}}};
+  dataSource = [];
+  newfood: Ingredient = {id: 0, limit: 0, units: '', food: new Food(0)};
 
   add(name) {
     // TODO search for tool properly (by name)
     this.newfood.food.name = name;
     this.dataSource.push(this.newfood);
-    this.newfood = {id: 0, limit: 0, food: {id: 0, name: '', group: {name: ''}}};
+    this.newfood = {id: 0, limit: 0, units: '', food: new Food(0)};
+  }
+
+  addAll(id, amount, units) {
+    // TODO search for tool properly (by name)
+    this.newfood.id = id;
+    this.newfood.limit = 0;
+    this.newfood.units = '';
+    this.newfood.food = new Food(id);
+    this.dataSource.push(this.newfood);
+    this.newfood = {id: 0, limit: 0, units: '', food: new Food(0)};
   }
 
   remove(index) {
@@ -50,7 +61,7 @@ export class FoodgroupsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed -- ' + result);
       if (result) {
-        this.add(result);
+        this.addAll(result, 0, '');
       }
     });
   }
