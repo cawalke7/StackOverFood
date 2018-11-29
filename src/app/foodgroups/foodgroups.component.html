@@ -1,26 +1,37 @@
-<h2>Add Ingredients</h2>
+<h2>Add Pantry Items with Food Groups</h2>
 <div>
-    <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-list cols="3" rowHeight="2:1">
 <!--         <mat-grid-tile *ngFor="let foodgroup of foodgroups">
             <button mat-raised-button>{{foodgroup.name}}</button>
         </mat-grid-tile> -->
-        <mat-grid-tile><button class="group" mat-raised-button>Fruits</button></mat-grid-tile>
-        <mat-grid-tile><button class="group" mat-raised-button>Grains</button></mat-grid-tile>
-        <mat-grid-tile><button class="group" mat-raised-button>Dairy</button></mat-grid-tile>
-        <mat-grid-tile><button class="group" mat-raised-button>Vegetables</button></mat-grid-tile>
-        <mat-grid-tile><button class="group" mat-raised-button>Proteins</button></mat-grid-tile>
-        <mat-grid-tile><button class="group" mat-raised-button>Other</button></mat-grid-tile>
+        <!-- <button mat-stroked-button (click)="openDialog()">Browse</button> -->
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add a Fruit</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add Grains</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add Dairy Item</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add a Vegetable</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add Proteins</button></mat-grid-tile>
+        <mat-grid-tile><button class="group" mat-raised-button (click)="openDialog()">Add Other Foods</button></mat-grid-tile>
     </mat-grid-list>
 </div>
 <br>
 <div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="Ingredient List">
-            <th mat-header-cell *matHeaderCellDef> Ingredient List </th>
-            <td mat-cell *matCellDef="let element"> {{element.food.name}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <table class="table table-sm table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th style="text-align: left; width: 40%">Pantry</th>
+                <th style="text-align: center; width: 40%" colspan="2">Amount</th>
+                <th></th> <!-- Nothing for delete button -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of dataSource; let i = index">
+                <td>{{ element.food.name }}</td>
+                <td style="text-align: right">{{ element.limit }}</td>
+                <td>{{ element.units }}</td>
+                <td class="remove" style="text-align: right">
+                    <button mat-button type="button" (click)="remove(i)">X</button>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>

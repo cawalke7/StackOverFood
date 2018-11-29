@@ -1,9 +1,16 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Tool } from '../model/tool';
 
 export interface ToolData {
   tool: string;
 }
+
+const TEMP_TOOLS: Tool[] = [
+  {name: 'microwave', replacements: [], cookingMethods: []},
+  {name: 'cutting board', replacements: [], cookingMethods: []},
+  {name: 'chef knife', replacements: [], cookingMethods: []}
+];
 
 @Component({
   selector: 'app-kitchentools-dialog',
@@ -11,6 +18,9 @@ export interface ToolData {
   styleUrls: ['./kitchentools-dialog.component.css']
 })
 export class KitchentoolsDialogComponent implements OnInit {
+  parent;
+
+  allTools = Object.assign([], TEMP_TOOLS);
 
   constructor(
     public dialogRef: MatDialogRef<KitchentoolsDialogComponent>,

@@ -21,12 +21,12 @@ const TEMP_TOOLS: Tool[] = [
 export class KitchentoolsComponent implements OnInit {
   // displayedColumns: string[] = ['Kitchen Tools'];
   allTools = Object.assign([], TEMP_TOOLS);
-  dataSource = Object.assign([], TEMP_TOOLS);
-  // tool: Tool = TEMP_TOOLS[0];
+  dataSource = [];
 
   newtool: Tool = {name: '', replacements: [], cookingMethods: []};
 
   add(name) {
+    // TODO search for tool properly (by name)
     this.newtool.name = name;
     this.dataSource.push(this.newtool);
     this.newtool = {name: '', replacements: [], cookingMethods: []};
@@ -45,8 +45,10 @@ export class KitchentoolsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.newtool = result;
+      console.log('The dialog was closed -- ' + result);
+      if (result) {
+        this.add(result);
+      }
     });
   }
 
