@@ -5,4 +5,6 @@ export class Ingredient {
     limit: number;
     food: Food;
     units: String;
+
+    // TODO make constructor
   }

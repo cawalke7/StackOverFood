@@ -7,9 +7,9 @@ export interface ToolData {
 }
 
 const TEMP_TOOLS: Tool[] = [
-  {name: 'microwave', replacements: [], cookingMethods: []},
-  {name: 'cutting board', replacements: [], cookingMethods: []},
-  {name: 'chef knife', replacements: [], cookingMethods: []}
+  {name: 'microwave', replacements: []},
+  {name: 'cutting board', replacements: []},
+  {name: 'chef knife', replacements: []}
 ];
 
 @Component({

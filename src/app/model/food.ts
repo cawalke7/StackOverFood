@@ -14,7 +14,6 @@ export class Food {
 
     constructor(id: number) {
         this.id = id;
-        console.log(id);
         this.name = TEMP_FOOD[id].name;
         this.cookingMethods = TEMP_FOOD[id].cookingMethods;
         this.group = TEMP_FOOD[id].group;

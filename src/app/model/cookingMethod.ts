@@ -7,11 +7,11 @@ export class CookingMethod {
     tools: Tool[];
     next: CookingMethod;
 
-    constructor(operation: String) {
+    constructor(operation: String, temperature: number, time: number, tools: Tool[], next: CookingMethod) {
         this.operation = operation;
-        this.temperature = 0;
-        this.time = 0;
-        this.tools = [];
-        this.next = null;
+        this.temperature = temperature;
+        this.time = time;
+        this.tools = tools;
+        this.next = next;
     }
 }

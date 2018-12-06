@@ -2,15 +2,19 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Tool } from '../model/tool';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { KitchentoolsDialogComponent } from '../kitchentools-dialog/kitchentools-dialog.component';
+import { KitchentoolsService } from './kitchentools.service';
 
 export interface ToolData {
   tool: string;
 }
 
 const TEMP_TOOLS: Tool[] = [
-  {name: 'microwave', replacements: [], cookingMethods: []},
-  {name: 'cutting board', replacements: [], cookingMethods: []},
-  {name: 'chef knife', replacements: [], cookingMethods: []}
+  // {name: 'microwave', replacements: []},
+  // {name: 'cutting board', replacements: []},
+  // {name: 'chef knife', replacements: []}
+  new Tool('microwave'),
+  new Tool('cutting board'),
+  new Tool('chef knife')
 ];
 
 @Component({
@@ -23,20 +27,24 @@ export class KitchentoolsComponent implements OnInit {
   allTools = Object.assign([], TEMP_TOOLS);
   dataSource = [];
 
-  newtool: Tool = {name: '', replacements: [], cookingMethods: []};
+  newtool = new Tool('');
 
   add(name) {
     // TODO search for tool properly (by name)
-    this.newtool.name = name;
-    this.dataSource.push(this.newtool);
-    this.newtool = {name: '', replacements: [], cookingMethods: []};
+    // this.newtool.name = name;
+    // this.dataSource.push(this.newtool);
+    // this.newtool = {name: '', replacements: [], cookingMethods: []};
+    this.service.add(name);
+    this.dataSource = this.service.getAll();
   }
 
   remove(index) {
-    this.dataSource.splice(index, 1);
+    // this.dataSource.splice(index, 1);
+    this.service.remove(index);
+    this.dataSource = this.service.getAll();
   }
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private service: KitchentoolsService) {}
 
    openDialog(): void {
     const dialogRef = this.dialog.open(KitchentoolsDialogComponent, {
