@@ -21,7 +21,7 @@ export class KitchentoolsService {
   }
 
   getAll(): Tool[] {
-    return this.dataSource;
+    return Array.from(this.dataSource);
   }
 
   constructor() { }

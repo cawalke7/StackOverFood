@@ -12,7 +12,7 @@ export const TEMP_FOOD: Food[] = [
         ]},
     {id: 2, name: 'bread', group: {name: 'Grains'},
         cookingMethods: [
-            new CookingMethod('Eat as much as you\'d like', 0, 0, [], null)
+            new CookingMethod('Eat', 0, 0, [], null)
         ]},
     {id: 3, name: 'carrot', group: {name: 'Vegetables'},
         cookingMethods: [

@@ -2,3 +2,11 @@
 <div>
   <button mat-stroked-button (click)="generate()">Generate</button>
 </div>
+<br>
+<br>
+<div *ngFor="let recipe of dataSource">
+  <h3>{{ recipe.name }}</h3>
+  <p>
+    {{ recipe.phrase }}
+  </p>
+</div>

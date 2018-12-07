@@ -3,10 +3,10 @@ import { Ingredient } from '../model/ingredient';
 import { Food } from '../model/food';
 
 const TEMP_INGREDIENT: Ingredient[] = [
-  {id: 4, limit: 1, units: '', food: new Food(4)},
-  {id: 1, limit: 1, units: '', food: new Food(1)},
-  {id: 2, limit: 1, units: '', food: new Food(2)},
-  {id: 3, limit: 1, units: '', food: new Food(3)}
+  {id: 4, limit: 2, units: 'servings', food: new Food(4)},
+  {id: 1, limit: 2, units: 'servings', food: new Food(1)},
+  {id: 2, limit: 2, units: 'servings', food: new Food(2)},
+  {id: 3, limit: 2, units: 'servings', food: new Food(3)}
 ];
 
 @Injectable({
@@ -22,7 +22,7 @@ export class FoodService {
   }
 
   getAll(): Ingredient[] {
-    return this.dataSource;
+    return Array.from(this.dataSource);
   }
 
   add(id, amount, units) {
