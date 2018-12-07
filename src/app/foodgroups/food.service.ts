@@ -13,8 +13,8 @@ const TEMP_INGREDIENT: Ingredient[] = [
   providedIn: 'root'
 })
 export class FoodService {
-  dataSource = Object.assign([], TEMP_INGREDIENT);
-  // dataSource = [];
+  // dataSource = Object.assign([], TEMP_INGREDIENT);
+  dataSource = [];
   newfood: Ingredient = {id: 0, limit: 0, units: '', food: new Food(0)};
 
   testTrigger(test: any) {

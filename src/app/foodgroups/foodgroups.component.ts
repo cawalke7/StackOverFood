@@ -26,8 +26,8 @@ const TEMP_INGREDIENT: Ingredient[] = [
 })
 export class FoodgroupsComponent implements OnInit {
   foodgroups = FOOD_GROUP;
-  dataSource = Object.assign([], TEMP_INGREDIENT);
-  // dataSource = [];
+  // dataSource = Object.assign([], TEMP_INGREDIENT);
+  dataSource = [];
   newfood: Ingredient = {id: 0, limit: 0, units: '', food: new Food(0)};
 
   // add(name) {
