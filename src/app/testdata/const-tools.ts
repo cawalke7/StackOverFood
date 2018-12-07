@@ -1,7 +1,7 @@
 import { Tool } from '../model/tool';
 
-const TEMP_TOOLS: Tool[] = [
-    {name: 'microwave', replacements: [], cookingMethods: []},
-    {name: 'cutting board', replacements: [], cookingMethods: []},
-    {name: 'chef knife', replacements: [], cookingMethods: []}
+export const TEMP_TOOLS: Tool[] = [
+    {name: 'microwave', replacements: []},
+    {name: 'cutting board', replacements: []},
+    {name: 'chef knife', replacements: []}
   ];
