@@ -25,7 +25,7 @@ export class FoodService {
     return Array.from(this.dataSource);
   }
 
-  add(id, amount, units) {
+  add(id: number, amount: number, units: String) {
     // TODO search for tool properly (by name)
     this.newfood.id = id;
     this.newfood.limit = amount;
@@ -36,7 +36,7 @@ export class FoodService {
     this.newfood = {id: 0, limit: 0, units: '', food: new Food(0)};
   }
 
-  remove(index) {
+  remove(index: number) {
     this.dataSource.splice(index, 1);
   }
 

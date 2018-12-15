@@ -25,6 +25,7 @@ const TEMP_TOOLS: Tool[] = [
 export class KitchentoolsComponent implements OnInit {
   // displayedColumns: string[] = ['Kitchen Tools'];
   allTools = Object.assign([], TEMP_TOOLS);
+  // dataSource = Object.assign([], TEMP_TOOLS); // For testing
   dataSource = [];
 
   newtool = new Tool('');

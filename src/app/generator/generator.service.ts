@@ -42,7 +42,7 @@ export class GeneratorService {
     return returnStatement;
   }
 
-  compareCooking(cooking, tools) {
+  compareCooking(cooking: CookingMethod, tools: Tool[]) {
     if (cooking.tools.length <= 0) {
       return cooking;
     }
@@ -68,14 +68,14 @@ export class GeneratorService {
     return false;
   }
 
-  printRecipe(ingredients, cookingMethods) {
+  printRecipe(ingredients: Ingredient[], cookingMethods: CookingMethod[]) {
     this.recipeCounter++;
     // console.log('printRecipe not implemented');
-    console.log('Ingredients: ' + ingredients);
-    console.log('Cooking Methods: ' + cookingMethods);
+    console.log('Ingredients: ', ingredients);
+    console.log('Cooking Methods: ', cookingMethods);
   }
 
-  printOneRecipe(ingredient) {
+  printOneRecipe(ingredient: Ingredient) {
     const recipe = new Recipe();
     this.recipeCounter++;
     const statement = ingredient.food.cookingMethods[0].operation
